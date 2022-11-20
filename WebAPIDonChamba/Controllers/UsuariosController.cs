@@ -90,16 +90,16 @@ namespace WebAPIDonChamba.Controllers
         }
 
         [HttpPost("Auth")]
-        public async Task<ActionResult<Usuario>> AuthUsuario(Auth usuario)
+        public ActionResult<Usuario> AuthUsuario(Auth usuario)
         {
-            usuario.Contrasena = Encryptor.MD5Hash(usuario.Contrasena);  
-            var auth = _context.Usuarios.Where(st => st.Contrasena.Equals(usuario.Contrasena) &&  st.Usuario1 == usuario.Usuario).First();
-      
-            if (auth  != null)
+            usuario.Contrasena = Encryptor.MD5Hash(usuario.Contrasena);
+            var auth = _context.Usuarios.Where(st => st.Contrasena.Equals(usuario.Contrasena) && st.Usuario1 == usuario.Usuario).First();
+
+            if (auth != null)
             {
                 return CreatedAtAction("GetUsuario", new { id = auth.PkIdUsuario }, auth);
             }
-           
+
             return BadRequest();
         }
 

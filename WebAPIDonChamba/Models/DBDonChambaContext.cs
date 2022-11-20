@@ -155,6 +155,8 @@ namespace WebAPIDonChamba.Models
                 entity.Property(e => e.Telefono)
                     .HasMaxLength(25)
                     .HasColumnName("telefono");
+                
+                entity.Property(e => e.Nivel).HasColumnName("nivel");
 
                 entity.Property(e => e.Usuario1)
                     .HasMaxLength(18)

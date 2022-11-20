@@ -18,6 +18,7 @@ namespace WebAPIDonChamba.Models
         public string Apellidos { get; set; } = null!;
         public string? Celular { get; set; }
         public string? Telefono { get; set; }
-         
+        public byte Nivel { get; set; }
+
     }
 }
