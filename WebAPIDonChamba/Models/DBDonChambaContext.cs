@@ -60,7 +60,13 @@ namespace WebAPIDonChamba.Models
                     .HasColumnType("decimal(20, 8)")
                     .HasColumnName("total");
 
-                
+                entity.Property(e => e.Comision)
+                    .HasColumnType("decimal(20, 8)")
+                    .HasColumnName("comision");
+
+
+
+
             });
 
             modelBuilder.Entity<OrdenesDetalle>(entity =>
@@ -110,6 +116,10 @@ namespace WebAPIDonChamba.Models
                     .HasColumnType("decimal(20, 8)")
                     .HasColumnName("precio");
 
+                entity.Property(e => e.Promocion)
+                    .HasColumnType("decimal(20, 8)")
+                    .HasColumnName("promocion");
+
 
             });
 
@@ -128,6 +138,11 @@ namespace WebAPIDonChamba.Models
                 entity.Property(e => e.Telefono)
                     .HasMaxLength(25)
                     .HasColumnName("telefono");
+
+
+                entity.Property(e => e.Comision)
+                    .HasColumnType("decimal(20, 8)")
+                    .HasColumnName("comision");
             });
 
             modelBuilder.Entity<Usuario>(entity =>

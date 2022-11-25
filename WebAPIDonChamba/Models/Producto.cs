@@ -16,7 +16,8 @@ namespace WebAPIDonChamba.Models
         public string? Descripcion { get; set; }
         public byte Estado { get; set; }
         public string Imagen { get; set; } = null!;
-        public decimal Precio { get; set; }  
+        public decimal Precio { get; set; }
+        public decimal Promocion { get; set; }
 
     }
 }
